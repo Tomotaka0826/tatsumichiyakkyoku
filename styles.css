@@ -1,0 +1,643 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+    --text-color: #333;
+    --light-bg: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.3rem 0.8rem;
+}
+
+nav ul li a:hover {
+    background-color: #45a049;
+    border-radius: 4px;
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.hero {
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 0;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.hero p {
+    color: var(--text-color);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* フッターのスタイル */
+.site-footer {
+    background-color: #f9f7f2;
+    padding: 40px 0 0 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.footer-section h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 16px;
+    background-color: #4CAF50;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-section ul li a::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+}
+
+.company-info {
+    margin-bottom: 20px;
+}
+
+.company-logo {
+    margin-bottom: 20px;
+}
+
+.company-logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+.phone, .hours {
+    margin: 5px 0;
+}
+
+.mail-button {
+    margin-top: 20px;
+}
+
+.mail-link {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.mail-link:hover {
+    background-color: #45a049;
+}
+
+.copyright {
+    background-color: #f9f7f2;
+    color: #333;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-section {
+        padding: 0 20px;
+    }
+
+    .company-info {
+        text-align: center;
+    }
+}
+
+/* ロゴのリンクスタイル */
+.logo a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ページコンテンツのスタイル */
+.page-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.page-content h1 {
+    color: #333;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #4CAF50;
+}
+
+/* 会社概要テーブルのスタイル */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+.info-table th,
+.info-table td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+.info-table th {
+    background-color: #f5f5f5;
+    width: 25%;
+    text-align: left;
+}
+
+.info-table td {
+    background-color: #fff;
+}
+
+/* 代表メッセージページのスタイル */
+.message-hero {
+    background-color: #f5f5f5;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.message-hero h1 {
+    font-size: 2rem;
+    color: #333;
+    display: inline-block;
+    padding: 0.5rem 3rem;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.message-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.message-section {
+    margin-bottom: 4rem;
+}
+
+.message-section h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.message-text {
+    margin-bottom: 3rem;
+}
+
+.message-text p {
+    margin-bottom: 1.5rem;
+    line-height: 2;
+    color: #333;
+}
+
+.ceo-info {
+    text-align: right;
+    margin-top: 3rem;
+}
+
+.ceo-image {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.ceo-title {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .message-hero {
+        padding: 2rem 1rem;
+    }
+
+    .message-content {
+        padding: 1rem;
+    }
+
+    .message-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .ceo-info {
+        text-align: center;
+    }
+}
+
+/* 会社概要ページのスタイル */
+.page-header {
+    background-color: #f5f5f5;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    color: #333;
+    display: inline-block;
+    padding: 0.5rem 3rem;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.company-profile {
+    margin-bottom: 4rem;
+}
+
+.map-section {
+    margin-top: 3rem;
+}
+
+.map-section h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.map-container {
+    width: 100%;
+    height: 450px;
+    margin-top: 2rem;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 1rem;
+    }
+
+    .info-table {
+        font-size: 0.9rem;
+    }
+
+    .info-table th {
+        width: 30%;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+}
+
+/* 在宅医療サービスページのスタイル */
+.home-care-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.service-intro {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.service-intro p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.flow-chart {
+    margin: 3rem 0;
+}
+
+.flow-item {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.flow-number {
+    background-color: #4CAF50;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+}
+
+.flow-arrow {
+    text-align: center;
+    color: #4CAF50;
+    margin: 1rem 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feature-item {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.service-area {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 4rem 0;
+}
+
+.contact-info {
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.contact-details {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flow-item {
+        padding: 1.5rem 1rem 1rem 1rem;
+    }
+
+    .flow-number {
+        position: static;
+        margin-bottom: 1rem;
+    }
+}
+
+/* お知らせ掲示板のスタイル */
+.news {
+    background-color: #fff;
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.news h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.news-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1.5rem 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.news-date {
+    min-width: 100px;
+    color: #666;
+}
+
+.news-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.news-content p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.news-more {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.more-link {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.more-link:hover {
+    background-color: #45a049;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .news-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .news-date {
+        min-width: auto;
+    }
+} 
